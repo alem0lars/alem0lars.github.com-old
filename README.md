@@ -7,7 +7,8 @@ All of the projects are under projects.molarialessandro.info/<project_name>
 
 ### Developers notes
 
-Here we use the plain jekyll
+- Here we use the plain jekyll
+- This webpage wants to be as functional and simple as possible
 
 
 ---
