@@ -9,4 +9,6 @@
 
 # Output directories/files
 /.sass-cache
+/_site
+/deploy
 
