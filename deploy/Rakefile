@@ -18,7 +18,7 @@ end
 task :build do
   FileUtils.cd(ROOT_PTH) do
     sh 'jekyll build', :verbose => false
-    FileUtils.cp_r(SITE_PTH.join('*'), DEPLOY_PTH)
+    sh "cp -a #{SITE_PTH.join('*')} #{DEPLOY_PTH.to_s}", :verbose => false
   end
 end
 
