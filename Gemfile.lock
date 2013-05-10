@@ -10,6 +10,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fast-stemmer (1.0.2)
+    git (1.2.5)
     highline (1.6.18)
     hike (1.2.2)
     jekyll (1.0.1)
@@ -53,6 +54,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  git
   jekyll
   jekyll-assets
   sass

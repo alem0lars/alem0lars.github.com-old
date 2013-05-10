@@ -6,5 +6,6 @@ group :development do
   gem 'jekyll-assets'
   gem 'uglifier'
   gem 'sass'
+  gem 'git'
 end
 
