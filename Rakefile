@@ -1,33 +1,40 @@
-require 'git'
-require 'logger'
-
-
 ROOT_PTH = Pathname.new File.dirname(__FILE__)
-SOURCE_PTH = ROOT_PTH
+DEPLOY_PTH = ROOT_PTH.join('_site')
 DEPLOY_PTH = ROOT_PTH.join('deploy')
 
 
 namespace :vcs do
   task :sync, [:commit_msg] do |t, args|
-    g = Git.open(SOURCE_PTH, :log => Logger.new(STDOUT))
-    g.add(:all=>true) rescue nil
-    g.commit(args[:commit_msg])
-    g.pull(g.remote('origin'), g.branch('source'))
-    g.push(g.remote('origin'), g.branch('source'))
+    FileUtils.cd(ROOT_PTH) do
+      sh 'git add -A', :verbose => false
+      sh "git commit -m \"#{args[:commit_msg]}\"", :verbose => false
+      sh 'git pull origin source', :verbose => false
+      sh 'git push origin source', :verbose => false
+    end
   end
 end
 
 
-task :deploy do
-  g = Git.open(DEPLOY_PTH, :log => Logger.new(STDOUT))
+task :build do
+  FileUtils.cd(ROOT_PTH) do
+    sh 'jekyll', :verbose => false
+    FileUtils.cp_r(SITE_PTH.join('*'), DEPLOY_PTH)
+  end
+end
+
+
+task :deploy => [:build] do
   FileUtils.cd(DEPLOY_PTH) do
-    g.add(:all => true)
-    g.commit('Deploy')
+    sh 'git add -A', :verbose => false
+    sh 'git commit -m "Deploy"', :verbose => false
+    sh 'git push origin source', :verbose => false
   end
 end
 
 
 task :server do
-  sh 'jekyll serve', :verbose => false
+  FileUtils.cd(ROOT_PTH) do
+    sh 'jekyll serve', :verbose => false
+  end
 end
 
