@@ -1,0 +1,21 @@
+.layout-default {
+  background-image: url(/assets/images/bg/binding-dark.png);
+  background-repeat: repeat;
+
+  body {
+    background-color: transparent;
+
+    #content {
+      min-height: 20em;
+    }
+
+    #header-wrp, #content-wrp, #footer-wrp {
+      background-color: white;
+    }
+
+    #footer-wrp {
+      border-top: solid 1px black;
+      padding: 1em;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<div class="row">
+
+  <div id="footer-contact-wrp" class="small-4 large-4 columns">
+    <div id="footer-contact" class="panel">
+      <h3 id="footer-contact-title">Author info</h3>
+      <ul id="footer-contact-content" class="no-bullet">
+        <li><span class="label radius">{{ site.author.name }}</span></li>
+        <li><span class="label secondary radius">{{ site.author.desc }}</span></li>
+        <li><span class="label secondary radius">{{ site.author.email }}</span></li>
+      </ul>
+    </div> <!-- #footer-contact -->
+  </div>
+
+  <div id="footer-social-wrp" class="small-4 large-4 columns">
+    <div id="footer-social" class="panel">
+      <h3 id="footer-social-title">Social</h3>
+      <ul id="footer-social-content" class="no-bullet">
+        <li>
+          <a href="http://github.com/{{ site.github.username }}/">
+            github.com/{{ site.github.username }}
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com/{{ site.twitter.username }}/">
+            twitter.com/{{ site.twitter.username }}
+          </a>
+        </li>
+      </ul>
+    </div> <!-- #footer-social -->
+  </div>
+
+  <div id="footer-copyright-wrp" class="small-4 large-4 columns">
+    <div id="footer-copyright" class="panel">
+      <ul id="footer-copyright-content" class="no-bullet">
+        <li>
+          <strong>
+            Copyleft &copy
+            <a href="http://www.gnu.org/licenses/fdl-1.3-standalone.html">
+              GNU FDLv1.3
+            </a>
+          </strong>
+        </li>
+        <li>
+          <strong>{{ site.author.name }}</strong>
+        </li>
+        <li>
+          <span class="label alert radius"><em>All rights reserved</em></span>
+        </li>
+    </div> <!-- #footer-copyright -->
+  </div>
+
+</div>

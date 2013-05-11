@@ -1,13 +1,25 @@
-name: Alessandro Molari Projects
-pygments: true
+name: Projects by Alessandro Molari
 
-author:
+author:               # Author informations
   name: Alessandro Molari
+  desc: Software systems engineer
   email: molari.alessandro@gmail.com
-  website: Software systems engineer
+  website: http://molarialessandro.info
 
-exclude:
+exclude:              # Files to exclude
   - Rakefile
   - README.md
   - Gemfile
   - Gemfile.lock
+
+pygments: true
+
+sass:                 # jekyll-sass plugin configuration
+  syntax: scss        #   > scss|sass
+  style: expanded     #   > nested|expanded|compact|compressed
+
+github:
+  username: alem0lars
+
+twitter:
+  username: alem0lars
