@@ -31,9 +31,9 @@ requirejs.config({
     'zurb-foundation/foundation-tooltips':    ['zurb-foundation/foundation', 'jquery', 'modernizr'],
     'zurb-foundation/foundation-topbar':      ['zurb-foundation/foundation', 'jquery', 'modernizr'],
 
-    // Mustache shims
-    'mustache/mustache': [],
-    'mustache/mustache-jquery': ['jquery'],
+    // EJS shims
+    'ejs/ejs': [],
+    'ejs/view': ['ejs/ejs'],
 
     // Other libs shims
     'sugar': [],
@@ -64,15 +64,16 @@ function get_requires() {
     'zurb-foundation/foundation-tooltips',
     'zurb-foundation/foundation-topbar',
 
-    // Mustache requires
-    'mustache/mustache',
-    'mustache/mustache-jquery',
+    // EJS requires
+    'ejs/ejs',
+    'ejs/view',
 
     // Other libs requires
     'sugar',
     'modernizr',
 
     // App - Generic - requires
+    'app/foundation-init',
     'app/logger',
     'app/auth'
   ];

@@ -1,8 +1,5 @@
-<% if (projects.length > 0) { %>
-  <span class="label alert radius">
-    No projects available at the moment :(
-  </span>
-<% else %>
+<% if (hasOwnProperty('projects') && Object.isArray(projects) && (projects.length > 0)) { %>
+  <% console.log('PIPPO'); %>
   <div class="section-container accordion" data-section="accordion">
     <% projects.each(function(project, index) { %>
       <section>
@@ -13,4 +10,8 @@
       </section>
     <% }); %>
   </div>
+<% } else { %>
+  <span class="label alert radius">
+    No projects available at the moment
+  </span>
 <% } %>
