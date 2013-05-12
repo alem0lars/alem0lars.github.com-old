@@ -34,7 +34,7 @@ end
 
 task :server do
   FileUtils.cd(ROOT_PTH) do
-    sh 'jekyll serve', :verbose => false
+    sh 'jekyll serve --watch', :verbose => false
   end
 end
 
