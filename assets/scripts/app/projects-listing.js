@@ -25,7 +25,7 @@ define([
   function renderTemplate() {
     // When AJAX calls are complete parse the template
     $(document).ajaxStop(function() {
-      new EJS({url: '/projects-listing.html'}).update('projects-listing-content', db);
+      new EJS({url: '/projects-listing.html'}).update('projects-content', db);
     });
   }
 
