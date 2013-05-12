@@ -1,13 +1,17 @@
 <div id="projects-listing-wrp" class="row">
-  <div id="projects-listing">
+  <div id="projects-listing" class="small-12 large-12 columns">
     <% if (hasOwnProperty('projects') && Object.isArray(projects) && (projects.length > 0)) { %>
-      <% console.log('PIPPO'); %>
       <div class="section-container accordion" data-section="accordion">
         <% projects.each(function(project, index) { %>
           <section>
-            <p class="title" data-section-title><a href="#">Section 2</a></p>
+            <p class="title" data-section-title><a href="#"><%= project.name %></a></p>
             <div class="content" data-section-content>
-              <p>Content of section 2.</p>
+              <% if (project.hasOwnProperty('details')) { %>
+              <% } else { %>
+                <span class="label success radius">
+                  No additional details
+                </span>
+              <% } %>
             </div>
           </section>
         <% }); %>
