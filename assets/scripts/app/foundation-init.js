@@ -1,0 +1,19 @@
+require([
+  "jquery",
+  "zurb-foundation/foundation",
+  "zurb-foundation/foundation-alerts",
+  "zurb-foundation/foundation-clearing",
+  "zurb-foundation/foundation-cookie",
+  "zurb-foundation/foundation-dropdown",
+  "zurb-foundation/foundation-forms",
+  "zurb-foundation/foundation-joyride",
+  "zurb-foundation/foundation-magellan",
+  "zurb-foundation/foundation-orbit",
+  "zurb-foundation/foundation-placeholder",
+  "zurb-foundation/foundation-reveal",
+  "zurb-foundation/foundation-section",
+  "zurb-foundation/foundation-tooltips",
+  "zurb-foundation/foundation-topbar"
+], function ($) {
+  $(document).foundation();
+});

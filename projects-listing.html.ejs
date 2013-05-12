@@ -1,0 +1,21 @@
+---
+---
+
+
+<% if (hasOwnProperty('projects') && Object.isArray(projects) && (projects.length > 0)) { %>
+  <% console.log('PIPPO'); %>
+  <div class="section-container accordion" data-section="accordion">
+    <% projects.each(function(project, index) { %>
+      <section>
+        <p class="title" data-section-title><a href="#">Section 2</a></p>
+        <div class="content" data-section-content>
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+    <% }); %>
+  </div>
+<% } else { %>
+  <span class="label alert radius">
+    No projects available at the moment
+  </span>
+<% } %>

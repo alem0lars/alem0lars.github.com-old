@@ -1,6 +1,6 @@
 define([
-  'jquery', 'mustache/mustache', 'sugar'
-], function($, Mustache, sugar) {
+  'jquery', 'ejs/ejs', 'sugar'
+], function($, ejs, sugar) {
 
   // Template for the Projects Listing
   var template;
@@ -16,32 +16,22 @@ define([
     $.getJSON(
       'https://api.github.com/users/{u_n}/repos?'.assign({ u_n: 'alem0lars' }),
       function(data) {
-        console.log(data);
-      });
-  }
-
-  // Load the template
-  function initTemplate() {
-    $.get(
-      'projects-listing.html',
-      function(data) { template = data; }
+        $.extend(db, data);
+      }
     );
   }
 
   // Render the template against the db
   function renderTemplate() {
-    // When AJAX calls are complete parse the template,
-    // replacing mustache tags with vars
+    // When AJAX calls are complete parse the template
     $(document).ajaxStop(function() {
-      var renderedPage = Mustache.to_html(template, db);
-      $('#projects-listing-content').html(renderedPage);
+      new EJS({url: '/projects-listing.html'}).update('projects-listing-content', db);
     });
   }
 
 
   $(document).ready(function() {
     initDb();
-    initTemplate();
     renderTemplate();
   });
 

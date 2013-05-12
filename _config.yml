@@ -7,6 +7,8 @@ author:               # Author informations
   website: http://molarialessandro.info
 
 exclude:              # Files to exclude
+  - tmp
+  - deploy
   - Rakefile
   - README.md
   - Gemfile
