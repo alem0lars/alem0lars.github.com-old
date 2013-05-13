@@ -1,11 +1,11 @@
 {
-  "disabled": [
+  "disbl": [
     "kaminari_themes"
   ],
-  "projects": {
+  "prjs": {
     "alem0lars.github.com": {
-      "replaceNameWith": "Projects Entry-Point Hosting",
-      "replaceDescWith": "The project underlying this website"
+      "repl_name_with": "Projects Entry-Point Hosting",
+      "repl_desc_with": "The project underlying this website"
     }
   }
 }
