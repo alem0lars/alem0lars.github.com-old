@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="layout-default">
 
   <head>
@@ -11,7 +12,8 @@
 
     <link rel="stylesheet" type="text/css" href="/assets/styles/app.css"></link>
 
-    <script data-main="/assets/scripts/app.js" src="/assets/scripts/lib/require.js"></script>
+    <script data-main="/assets/scripts/app.js"
+            src="/assets/scripts/lib/require.js"></script>
 
   </head>
 
@@ -20,19 +22,19 @@
     <div id="header-wrp" class="row">
       <div id="header" class="small-12 large-12 columns">
         {% include header.html %}
-      </div>
+      </div> <!-- #header -->
     </div> <!-- #header-wrp -->
 
-    <div id="content-wrp" class="row">
-      <div id="content" class="small-12 large-12 columns">
+    <div id="ctnt-wrp" class="row">
+      <div id="ctnt" class="small-12 large-12 columns">
         <div class="panel">{{ content }}</div>
-      </div>
-    </div> <!-- #content-wrp -->
+      </div> <!-- #ctnt -->
+    </div> <!-- #ctnt-wrp -->
 
     <div id="footer-wrp" class="row">
       <div id="footer" class="small-12 large-12 columns">
         {% include footer.html %}
-      </div>
+      </div> <!-- #footer -->
     </div> <!-- #footer-wrp -->
 
   </body>

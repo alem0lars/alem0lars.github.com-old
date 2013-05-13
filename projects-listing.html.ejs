@@ -1,32 +1,41 @@
 ---
 ---
 
-<div id="projects-listing-wrp" class="row">
-  <div id="projects-listing" class="small-12 large-12 columns">
+<div id="prjs-list-wrp" class="row">
+  <div id="prjs-list" class="small-12 large-12 columns">
 
-    <% if (hasOwnProperty('projects') && projects && Object.isArray(projects)) { %>
+    <% if (prjs && Object.isArray(prjs)) { %>
 
       <div class="section-container accordion" data-section="accordion">
-        <% projects.each(function(project, index) { %>
+        <% prjs.each(function(prj) { %>
           <section>
 
             <p class="title" data-section-title>
               <a href="#">
-                <span class="label radius"><%= project.shownName %></span>
+                <span class="label radius"><%= prj.shown_name %></span>
               </a>
             </p>
 
-            <div class="project content" data-section-content>
-              <% if (project.hasOwnProperty('hasDetails') && project.hasDetails) { %>
+            <div class="prj content" data-section-content>
+              <% if (prj.has_details) { %>
 
-                <h4 class="project-title"><%= project.shownName %></h4>
+                <h4 class="prj-title"><%= prj.shown_name %></h4>
 
-                <% if (project.hasOwnProperty('description')) { %>
-                  <h4 class="project-subtitle subheader">
-                    <%= project.shownDesc %>
+                <% if (prj.hasOwnProperty("desc")) { %>
+                  <h4 class="prj-subtitle subheader">
+                    <%= prj.shown_desc %>
                   </h4>
                 <% } %>
-
+                <% if (prj.btns) { %>
+                  <div class="prj-btns">
+                    <% prj['btns'].each(function(btn) { %>
+                      <a class="prj-btn button small secondary radius"
+                         href="<%= btn['link'] %>">
+                        <%= btn['name'].titleize() %>
+                      </a>
+                    <% }); %>
+                  </div>
+                <% } %>
               <% } else { %>
                 <span class="label success radius">
                   No additional details
