@@ -5630,10 +5630,10 @@ a.th {
 .layout-default body {
   background-color: transparent;
 }
-.layout-default body #content {
+.layout-default body #ctnt {
   min-height: 20em;
 }
-.layout-default body #header-wrp, .layout-default body #content-wrp, .layout-default body #footer-wrp {
+.layout-default body #header-wrp, .layout-default body #ctnt-wrp, .layout-default body #footer-wrp {
   background-color: white;
 }
 .layout-default body #footer-wrp {
