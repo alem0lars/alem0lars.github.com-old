@@ -28,6 +28,12 @@ define([
       if (project.hasOwnProperty('description')) {
         project.hasDetails = true;
       }
+      if (projects_metadata.hasOwnProperty('projects') &&
+        pm.hasOwnProperty(project.name)) {
+        if (pm[project.name].hasOwnProperty('replaceDescWith')) {
+          project.shownDesc = pm[project.name].replaceDescWith;
+        } else { project.shownDesc = project.description; }
+      } else { project.shownDesc = project.description; }
 
       //                                                 3. Buttons
       project.buttons = [];

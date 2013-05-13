@@ -4,7 +4,8 @@
   ],
   "projects": {
     "alem0lars.github.com": {
-      "replaceNameWith": "Projects Website Hosting"
+      "replaceNameWith": "Projects Entry-Point Hosting",
+      "replaceDescWith": "The project underlying this website"
     }
   }
 }
