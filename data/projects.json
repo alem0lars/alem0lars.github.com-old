@@ -1,5 +1,11 @@
 {
   "disabled": [
     "kaminari_themes"
-  ]
+  ],
+  "projects": {
+    "alem0lars.github.com": {
+      "replaceNameWith": "Projects Entry-Point Hosting",
+      "replaceDescWith": "The project underlying this website"
+    }
+  }
 }
