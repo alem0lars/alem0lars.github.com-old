@@ -1,5 +1,10 @@
 {
   "disabled": [
     "kaminari_themes"
-  ]
+  ],
+  "projects": {
+    "alem0lars.github.com": {
+      "replaceNameWith": "Projects Website Hosting"
+    }
+  }
 }

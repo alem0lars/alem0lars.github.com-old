@@ -3,26 +3,48 @@
 
 <div id="projects-listing-wrp" class="row">
   <div id="projects-listing" class="small-12 large-12 columns">
-    <% if (hasOwnProperty('projects') && Object.isArray(projects) && (projects.length > 0)) { %>
+
+    <% if (hasOwnProperty('projects') && projects && Object.isArray(projects)) { %>
+
       <div class="section-container accordion" data-section="accordion">
         <% projects.each(function(project, index) { %>
           <section>
-            <p class="title" data-section-title><a href="#"><%= project.name %></a></p>
-            <div class="content" data-section-content>
-              <% if (project.hasOwnProperty('details')) { %>
+
+            <p class="title" data-section-title>
+              <a href="#">
+                <span class="label radius"><%= project.shownName %></span>
+              </a>
+            </p>
+
+            <div class="project content" data-section-content>
+              <% if (project.hasOwnProperty('hasDetails') && project.hasDetails) { %>
+
+                <h4 class="project-title"><%= project.shownName %></h4>
+
+                <% if (project.hasOwnProperty('description')) { %>
+                  <h4 class="project-subtitle subheader">
+                    <%= project.description %>
+                  </h4>
+                <% } %>
+
               <% } else { %>
                 <span class="label success radius">
                   No additional details
                 </span>
               <% } %>
             </div>
+
           </section>
         <% }); %>
       </div>
+
     <% } else { %>
+
       <span class="label alert radius">
         No projects available at the moment
       </span>
+
     <% } %>
+
   </div>
 </div>
