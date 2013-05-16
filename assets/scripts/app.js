@@ -37,7 +37,8 @@ requirejs.config({
 
     // Other libs shims
     'sugar': [],
-    'modernizr': []
+    'modernizr': [],
+    'monkeybars': []
 
   }
 });
@@ -71,6 +72,7 @@ function get_requires() {
     // Other libs requires
     'sugar',
     'modernizr',
+    'monkeybars',
 
     // App - Generic - requires
     'app/foundation-init',

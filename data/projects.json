@@ -1,11 +1,22 @@
 {
   "disbl": [
-    "kaminari_themes"
+    "kaminari_themes",
+    "awesootup-old"
   ],
   "prjs": {
     "alem0lars.github.com": {
       "repl_name_with": "Projects Entry-Point Hosting",
       "repl_desc_with": "The project underlying this website"
+    },
+    "awesootup": {
+      "btns": [
+        { "name": "documentation"
+        , "link": "http://projects.molarialessandro.info/awesootup"
+        },
+        { "name": "go to the service"
+        , "link": "http://awesootup.net"
+        }
+      ]
     }
   }
 }
