@@ -36,70 +36,6 @@ define([
     } else if (fallback !== undefined) { prj[trgt_prop] = fallback; }
   }
 
-  function create_files_task (prj_name, files_info) {
-    // TODO
-    // var files_inner_tasks = files_info.map(function (file_info) {
-    //   // Create a MonkeyBars.Task for each file
-    //   var file_inner_tasks = file_info.exts.map(function(ext) {
-    //     // The URL for a file
-    //     var url = "https://github.com/{un}/{pn}/raw/master/{fn}{en}".assign({
-    //       un: 'alem0lars', pn: prj_name, fn: file_info.name, en: ext
-    //     });
-
-    //     return new MonkeyBars.Task({
-    //       name: "Fetcher<{fn}{ext}>".assign({ fn: file_info.name, en: ext }),
-    //       performTask: function () {
-    //         var self = this;
-    //         $.ajax({
-    //           url: url,
-    //           global: false,
-    //           success: function (data, status, jq_xhr) {
-    //             self.complete(data);
-    //           }
-    //         })
-    //         .fail(function () {
-    //           self.complete();
-    //         });
-    //       }
-    //     });
-    //   });
-
-    //   /* Run the extensions task (a MonkeyBars.Task for each extension of the
-    //    * current file) for the current file
-    //    */
-    //   return new MonkeyBars.ParallelTask({
-    //     name: file_info.name,
-    //     tasks: file_inner_tasks,
-    //     concurrent: false, /* try the different exts for a file concurrently */
-    //     handleProduct: function (product) {
-    //       var self = this;
-    //       console.log("Product: " + product);
-    //       /* FCFS (the others products will be ignored) */
-    //       if (self.product === undefined) {
-    //         self.product = product;
-    //       }
-    //     },
-    //     onComplete: function () {
-    //       var self = this;
-
-    //       // TODO: Return the part
-    //       console.log("Parallel: " + file_info.name + " Data:\n" + self.product);
-    //     }
-    //   });
-    // });
-
-    // /* Run the files task (a MonkeyBars.ParallelTask for each file) serially */
-    // var files_task = new MonkeyBars.SequenceTask({
-    //   name: 'Files Task',
-    //   tasks: files_inner_tasks,
-    //   onComplete: function () {
-    //     // TODO: Render the dom
-    //     console.log("Files Task");
-    //   }
-    // });
-    // files_task.start();
-  }
-
   /**
    * Setup the 'db' from the provided 'gh_mtd' and 'prjs_mtd'
    *
@@ -159,18 +95,6 @@ define([
           }
         });
       }
-
-      /* 4) Files */
-      var md_exts = [".md", ".markdown"];
-      var plain_ext = "";
-      var files_info = [
-        { name: "README", exts: Array.create(md_exts, plain_ext) },
-        { name: "CHANGELOG", exts: Array.create(md_exts, plain_ext) },
-        { name: "NEWS", exts: Array.create(md_exts, plain_ext) },
-        { name: "LICENSE", exts: Array.create(md_exts, plain_ext) }
-      ];
-      /* Create the parallel task for the files */
-      create_files_task(prj.name, files_info);
 
       /* has_details: The current project has some details ? {Boolean} */
       prj.has_details = prj.hasOwnProperty.desc;

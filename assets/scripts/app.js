@@ -72,7 +72,6 @@ function get_requires() {
     // Other libs requires
     'sugar',
     'modernizr',
-    'monkeybars',
 
     // App - Generic - requires
     'app/foundation-init',
