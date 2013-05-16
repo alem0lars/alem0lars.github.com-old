@@ -7,8 +7,17 @@ All of the projects are under projects.molarialessandro.info/<project_name>
 
 ### Developers notes
 
-- Here we use the plain jekyll
-- This webpage wants to be as functional and simple as possible
+- This webpage wants to be as functional and simple as possible (KISS Principle)
+- Main technologies & libraries used:
+  - Jekyll, with the following plugins:
+    - jekyll-sass (To compile SASS/SCSS files into CSS)
+  - Scripts:
+    - EJS
+    - jQuery
+    - RequireJS
+    - SugarJS
+  - Styles:
+    - SASS
 
 
 ---
